@@ -1,5 +1,5 @@
-from multiplication import multiplication
-from subtraction import subtraction
+from PyPil.Polinomials.multiplication import multiplication
+from PyPil.Polinomials.subtraction import subtraction
 
 
 def generalAlgorithm(polynomial1, polynomial2):

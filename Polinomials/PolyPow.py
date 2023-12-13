@@ -1,4 +1,4 @@
-from multiplication import multiplication
+from PyPil.Polinomials.multiplication import multiplication
 
 
 def PolyPow (Polynomial, n):

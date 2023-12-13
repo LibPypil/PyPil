@@ -1,5 +1,5 @@
 from ruffini import ruffini
-from EQ2 import EQ2
+from PyPil.Equations.EQ2 import EQ2
 
 
 def PolyRoot (Polynomial):
