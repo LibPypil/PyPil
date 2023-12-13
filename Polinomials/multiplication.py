@@ -17,7 +17,7 @@ def multiplication (polynomial1, polynomial2):
             for e in polynomial1:
                 finalPol.append(e * polynomial2)
         else:
-            for e in polynomial2:                      # esto es mas triste que un huerfano sin comida
+            for e in polynomial2:
                 finalPol.append(e * polynomial1)
     else:
         ie1 = -1
