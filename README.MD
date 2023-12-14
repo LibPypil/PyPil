@@ -22,7 +22,7 @@
     - The coefficient must be only a number, without operators: 
        > ["1x+1x", "3(3x + 3)"] <- This is wrong.
     
-       > ["2x", "9x", 9] <- This is perfect.
+       > ["2x", "9x", 9, '=', ] <- This is perfect.
   - 2nd degree:
     - It must be an array that its length must be max 3 (it will use 
             the monomial rules). If the discriminant is negative, it will
