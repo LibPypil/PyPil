@@ -26,6 +26,3 @@ def addition(polynomial1, polynomial2):
             break
         i += 1
     return finalPolynomial
-
-
-print(addition([4, 5, 9.87], []))

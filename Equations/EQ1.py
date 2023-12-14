@@ -263,4 +263,4 @@ def EQ1(Equation):
         #Algoritmo con 2 o más fracciones
 
 
-print(EQ1(["(", "x", -2, "/", 3, ")", -8, "=", 23]))
+print(EQ1(["(", "x", "/", 3, ")", -8, "=", 23]))
