@@ -127,7 +127,6 @@ def EQ1(Equation):
                     moreX = True
         if typeOf == 3 and moreX:
             typeOf = 2
-        print(typeOf)
 
         if typeOf == 1:
             left = []
@@ -230,27 +229,38 @@ def EQ1(Equation):
             return (left[0] - right[0]) / (right[1] - left[1])
 
         else:
-            print(numerator, denominator)
-            print(leftPol, rightPol)
-            left = deleteItemsBetween(leftPol, "(", ")")
-            right = deleteItemsBetween(rightPol, "(", ")")
-            if parentesisLeft:
-                left.append(float(numerator.strip("x")) / float(denominator.strip("x")))
-
-            #if numerator / denominator >= 1:
-                # una normal
-            #else:
-
-
-
+            numerator = int(numerator.strip("x"))
+            denominator = int(denominator.strip("x"))
+            if numerator / denominator >= 1:
+                finalEquation = []
+                if parentesisLeft:
+                    finalEquation.append(str(numerator / denominator) + "x")
+                for e in deleteItemsBetween(leftPol, "(", ")"):
+                    finalEquation.append(e)
+                finalEquation.append("=")
+                for e in deleteItemsBetween(rightPol, "(", ")"):
+                    finalEquation.append(e)
+                if not parentesisLeft:
+                    finalEquation.append(str(numerator / denominator) + "x")
+                return EQ1(finalEquation)
+            else:
+                fraction = ["(", 1, "/", str(abs(numerator - denominator)) + "x", ")"]
+                finalEquation = []
+                if parentesisLeft:
+                    for e in fraction:
+                        finalEquation.append(e)
+                for e in deleteItemsBetween(leftPol, "(", ")"):
+                    finalEquation.append(e)
+                finalEquation.append("=")
+                for e in deleteItemsBetween(rightPol, "(", ")"):
+                    finalEquation.append(e)
+                if not parentesisLeft:
+                    for e in fraction:
+                        finalEquation.append(e)
+                return EQ1(finalEquation)
     else:
         print("más de 2 fracs")
         #Algoritmo con 2 o más fracciones
 
 
-print(EQ1(["(", "3x", "/", "2x", ")", "-8x", "=", 23]))
-
-#1 - ["(", "x", "/", 9, ")", "4x", -6, "=", 8]
-#2 - ["(", 10, "/", "x", ")", -23, "4x", "=", "6x"]
-#3 - ["(", 6, "/", "x", ")", -4, "=", -2]
-#4 - ["(", "3x", "/", "2x", ")", -8, "=", 23]
+print(EQ1(["(", "x", -2, "/", 3, ")", -8, "=", 23]))
