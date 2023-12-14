@@ -213,7 +213,21 @@ def EQ1(Equation):
             left[2] -= right[2]
             return EQ2(left)
 
-        #elif typeOf == 3:
+        elif typeOf == 3:
+            left = [0, 0]
+            right = [0, 0]
+            deleteItemsBetween(leftPol, "(", ")")
+            deleteItemsBetween(rightPol, "(", ")")
+            if parentesisLeft:
+                left[0] = numerator
+            else:
+                right[0] = numerator
+            for e in leftPol:
+                left[1] += e
+            for e in rightPol:
+                right[1] += e
+
+            return (left[0] - right[0]) / (right[1] - left[1])
 
         #else:
 
@@ -223,7 +237,7 @@ def EQ1(Equation):
         #Algoritmo con 2 o más fracciones
 
 
-print(EQ1(["(", 10, "/", "x", ")", "4x", -23, "=", "6x"]))
+print(EQ1())
 
 #1 - ["(", "x", "/", 9, ")", "4x", -6, "=", 8]
 #2 - ["(", 10, "/", "x", ")", -23, "4x", "=", "6x"]
