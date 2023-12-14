@@ -229,7 +229,19 @@ def EQ1(Equation):
 
             return (left[0] - right[0]) / (right[1] - left[1])
 
-        #else:
+        else:
+            print(numerator, denominator)
+            print(leftPol, rightPol)
+            left = deleteItemsBetween(leftPol, "(", ")")
+            right = deleteItemsBetween(rightPol, "(", ")")
+            print(left, right)
+            if parentesisLeft:
+                left.append(numerator / denominator)
+
+            #if numerator / denominator >= 1:
+                # una normal
+            #else:
+
 
 
     else:
@@ -237,7 +249,7 @@ def EQ1(Equation):
         #Algoritmo con 2 o más fracciones
 
 
-print(EQ1())
+print(EQ1(["(", "3x", "/", "2x", ")", "-8x", "=", 23]))
 
 #1 - ["(", "x", "/", 9, ")", "4x", -6, "=", 8]
 #2 - ["(", 10, "/", "x", ")", -23, "4x", "=", "6x"]
