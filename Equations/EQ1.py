@@ -56,7 +56,7 @@ def EQ1(Equation):
                 elif e == "-x":
                     e = "-1"
                 e = e.replace("x", "")
-                sumStr += int(e)
+                sumStr += float(e)
             else:
                 sumInt += e
         leftPol.clear()
@@ -72,7 +72,7 @@ def EQ1(Equation):
                 elif e == "-x":
                     e = "-1"
                 e = e.replace("x", "")
-                sumStr += int(e)
+                sumStr += float(e)
             else:
                 sumInt += e
         rightPol.clear()
@@ -139,14 +139,14 @@ def EQ1(Equation):
             left.append(numerator)
             for e in leftPol:
                 if isinstance(e, str):
-                    e = int(e.strip("x"))
+                    e = float(e.strip("x"))
                     e = str(e * denominator) + "x"
                     left.append(e)
                 else:
                     left.append(e * denominator)
             for e in rightPol:
                 if isinstance(e, str):
-                    e = int(e.strip("x"))
+                    e = float(e.strip("x"))
                     e = str(e * denominator) + "x"
                     right.append(e)
                 else:
@@ -161,7 +161,7 @@ def EQ1(Equation):
                     elif e == "-x":
                         e = "-1"
                     e = e.replace("x", "")
-                    sumStr += int(e)
+                    sumStr += float(e)
                 else:
                     sumInt += e
             left.clear()
@@ -177,7 +177,7 @@ def EQ1(Equation):
                     elif e == "-x":
                         e = "-1"
                     e = e.replace("x", "")
-                    sumStr += int(e)
+                    sumStr += float(e)
                 else:
                     sumInt += e
             right.clear()
@@ -200,12 +200,12 @@ def EQ1(Equation):
 
             for e in leftPol:
                 if isinstance(e, str):
-                    left[2] = left[2] + int(e.strip("x"))
+                    left[2] = left[2] + float(e.strip("x"))
                 else:
                     left[1] = e
             for e in rightPol:
                 if isinstance(e, str):
-                    right[2] = right[2] + int(e.strip("x"))
+                    right[2] = right[2] + float(e.strip("x"))
                 else:
                     right[1] = e
             left[0] -= right[0]
@@ -234,9 +234,8 @@ def EQ1(Equation):
             print(leftPol, rightPol)
             left = deleteItemsBetween(leftPol, "(", ")")
             right = deleteItemsBetween(rightPol, "(", ")")
-            print(left, right)
             if parentesisLeft:
-                left.append(numerator / denominator)
+                left.append(float(numerator.strip("x")) / float(denominator.strip("x")))
 
             #if numerator / denominator >= 1:
                 # una normal
