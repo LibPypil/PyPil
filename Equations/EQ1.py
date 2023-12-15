@@ -33,7 +33,7 @@ def EQ1(Equation):
     if isOpen:
         raise TypeError("Unexpected parameter")
 
-    #Separarlos
+    # Separarlos
     leftPol = []
     rightPol = []
     leftPointer = True
