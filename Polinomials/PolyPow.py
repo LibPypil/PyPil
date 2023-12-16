@@ -17,5 +17,3 @@ def PolyPow (Polynomial, n):
     for i in range (1, n):
         finalPol = multiplication(finalPol, Polynomial)
     return finalPol
-
-print(PolyPow([10, 3, 4, 1], 1.5))

@@ -1,4 +1,4 @@
-from ruffini import ruffini
+from PyPil.Polinomials.ruffini import ruffini
 from PyPil.Equations.EQ2 import EQ2
 
 

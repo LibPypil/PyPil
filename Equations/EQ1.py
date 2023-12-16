@@ -1,5 +1,5 @@
 from math import lcm
-from EQ2 import EQ2
+from PyPil.Equations.EQ2 import EQ2
 
 
 def deleteItemsBetween(list, start, end):
@@ -263,4 +263,4 @@ def EQ1(Equation):
         #Algoritmo con 2 o más fracciones
 
 
-print(EQ1(["(", "x", "/", 3, ")", -8, "=", 23]))
+#print(EQ1(["(", "x", "/", 3, ")", -8, "=", 23]))

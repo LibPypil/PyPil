@@ -1,4 +1,4 @@
-from PolyRoot import PolyRoot
+from PyPil.Polinomials.PolyRoot import PolyRoot
 
 
 def EQ3p (Polynomial):

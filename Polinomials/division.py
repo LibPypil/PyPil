@@ -1,5 +1,5 @@
-from ruffini import ruffini
-from generalAlgorithm import generalAlgorithm
+from PyPil.Polinomials.ruffini import ruffini
+from PyPil.Polinomials.generalAlgorithm import generalAlgorithm
 
 
 def division (polynomial1, polynomial2):
