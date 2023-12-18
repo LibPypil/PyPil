@@ -41,9 +41,6 @@ combobox.place(x = 30, y = 93)
 #texto_salida = scrolledtext.ScrolledText(frame, wrap=tk.WORD, width=40, height=10)
 #texto_salida.place(x = 30, y = 93)
 
-#Info text
-infoBack = tk.Canvas(frame, background="white", width=172, height=180, borderwidth=2)
-infoBack.place(x = 185, y = 93)
 def on_enter_pressed(event):
     label_text = tk.StringVar()
     label_text.set("Resultado")
