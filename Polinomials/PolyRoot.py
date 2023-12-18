@@ -59,5 +59,3 @@ def PolyRoot (Polynomial):
     for e in finalRoots:
         toReturn.append(float(e))
     return list(set(toReturn))
-
-print(PolyRoot([0, -72, 24, 22, -4, -2]))

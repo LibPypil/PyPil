@@ -4,7 +4,7 @@ from PyPil.Polinomials.generalAlgorithm import generalAlgorithm
 
 def division (polynomial1, polynomial2):
     # Check parameters
-    if not isinstance(polynomial1, list) or not isinstance(polynomial2, list):   # estoy perdiendo el pelo por culpa del estres
+    if not isinstance(polynomial1, list) or not isinstance(polynomial2, list):
         raise TypeError("Unexpected parameter.")
     if not polynomial1 or not polynomial2 or polynomial2 == 0 or polynomial2 == [0]:
         raise TypeError("Unexpected parameter.")

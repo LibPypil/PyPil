@@ -9,7 +9,7 @@ def addition(polynomial1, polynomial2):
 
     lenPolynomial1 = len(polynomial1)
     lenPolynomial2 = len(polynomial2)
-    finalPolynomial = []                 # ella es condicional de otro if :(
+    finalPolynomial = []
     i = 0
     while True:
         try:
