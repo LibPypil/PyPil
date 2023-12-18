@@ -55,14 +55,23 @@ def on_enter_pressed(event):
         contenido = list(contenido)
         possibleNumerator = 0
         lastWasFloat = False
+        isNegative = False
         for e in contenido:
             doNothing = False
+            if e == "-" and not doNothing:
+                print(e)
+                isNegative = True
+                doNothing = True
             if e == "(" or e == ")" or e == "=" or e == "/" and not doNothing:
                 contenidoFinal.append(e)
                 lastWasFloat = False
                 doNothing = True
             if isFloat(e) and not doNothing:
-                contenidoFinal.append(float(e))
+                if isNegative:
+                    contenidoFinal.append(float(e) * -1)
+                    isNegative = False
+                else:
+                    contenidoFinal.append(float(e))
                 lastWasFloat = True
                 doNothing = True
             if e == "x" and not doNothing:
@@ -71,6 +80,7 @@ def on_enter_pressed(event):
                 else:
                     contenidoFinal.append("x")
                 lastWasFloat = False
+        print(contenidoFinal)
         label_text = tk.StringVar()
         label_text.set(PyPil.EQ1(contenidoFinal))
         label = tk.Label(frame, textvariable=label_text, width=47, borderwidth=2, background="white")
