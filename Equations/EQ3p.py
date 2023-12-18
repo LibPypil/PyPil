@@ -20,7 +20,6 @@ def EQ3p (Polynomial):
     if numLen == 2:
         complexNum = pow((Polynomial[0] * -1) / Polynomial[-1], 1/(len(Polynomial) - 2))
         return complexNum.real
-    if numLen == 3:
+    if numLen >= 3:
         return PolyRoot(Polynomial)
 
-#print(EQ3p([2, -3, 1]))

@@ -35,7 +35,7 @@ label.place(x=30, y=60)
 
 #Choice box
 selected_value = tk.StringVar()
-options = ["Ecuación 1r Grado", "Ecuación 2ndo Grado", "Ecuación 3r+ Grado", "Suma de Polinomios", "Resta de Polinomios", "Multiplicación de Polino.", "División de Polinomios", "Extraer las raíces", "Exponenciación de Polin."]
+options = ["Ecuación 1r Grado", "Ecuación 2ndo Grado", "Ecuación 3r+ Grado", "", "Suma de Polinomios", "Resta de Polinomios", "Multiplicación de Polino.", "División de Polinomios", "Extraer las raíces", "Exponenciación de Polin."]
 combobox = ttk.Combobox(frame, values=options, textvariable=selected_value, state='readonly')
 combobox.place(x = 30, y = 93)
 #texto_salida = scrolledtext.ScrolledText(frame, wrap=tk.WORD, width=40, height=10)
@@ -101,6 +101,7 @@ def on_enter_pressed(event):
         contenidoFinal = []
         for e in contenido:
             contenidoFinal.append(float(e))
+        print(contenidoFinal)
         label_text = tk.StringVar()
         label_text.set(PyPil.EQ3p(contenidoFinal))
         label = tk.Label(frame, textvariable=label_text, width=47, borderwidth=2, background="white")
